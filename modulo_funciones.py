@@ -51,7 +51,7 @@ def mapear_bicicleta(lista: list, funcion):
         funcion(lista, i)
 
 def asignar_tiempo(lista: list, bicicleta: int):
-    """Recibe una bicicleta y le asigna un numero del 1 al 10 y un decimal
+    """Recibe una bicicleta y le asigna un numero del 50 al 120 y un decimal
 
     Args:
         lista (list): La lista a asignar
@@ -109,9 +109,9 @@ def filtrar_bicis(lista:list, tipo_bici: str, path: str):
 
 
 def promedio_tipo_bicis(lista: list):
-    """Recibe una lista, crea un diccionario
-    con cada tipo de tipo y suma,
-    devuelve el diccionario
+    """Recibe una lista, crea 3 diccionario
+    con cada tipo, calcula el promedio de cada tipo,
+    devuelve el diccionario y los tipos
 
     Args:
         lista (list): La lista de diccionarios
@@ -165,7 +165,7 @@ def cambiar_bicis(lista, i, j):
 
 def ordenar_tipo_tiempo_asc(lista: list):
     """Recibe una lista,
-    ordena la lista por genero dentro de este por rating descendiente
+    ordena la lista por tipo dentro de este por tiempo ascendente
     no devuelve nada
 
     Args:
@@ -181,5 +181,11 @@ def ordenar_tipo_tiempo_asc(lista: list):
 
 
 def guardar_bicis_json(lista: list, path: str):
+    """Crea y guarda una lista en un json
+
+    Args:
+        lista (list): lista a guardar
+        path (str): donde se va a guardar
+    """
     with open(f"{path}/bicis.ordenadas.json", "w", encoding = "utf-8") as archivo:
         json.dump(lista, archivo, ensure_ascii = False, indent = 4)
